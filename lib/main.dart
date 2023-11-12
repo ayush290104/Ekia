@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:sixam_mart/controller/auth_controller.dart';
@@ -24,6 +25,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
 import 'package:url_strategy/url_strategy.dart';
+import 'firebase_options.dart';
 import 'helper/get_di.dart' as di;
 
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
@@ -35,7 +37,7 @@ Future<void> main() async {
   }
   setPathUrlStrategy();
   WidgetsFlutterBinding.ensureInitialized();
-  if (GetPlatform.isWeb) {
+  if (kIsWeb) {
     await Firebase.initializeApp(
         options: FirebaseOptions(
             apiKey: "AIzaSyA5z2MaEB785J978fJXnEhnMWAMBqIF8pU",
@@ -48,7 +50,12 @@ Future<void> main() async {
 
     ));
   }
-  await Firebase.initializeApp();
+  else{
+    await Firebase.initializeApp(
+      // options: DefaultFirebaseOptions.currentPlatform,
+    );
+  }
+
   Map<String, Map<String, String>> _languages = await di.init();
 
   NotificationBody _body;

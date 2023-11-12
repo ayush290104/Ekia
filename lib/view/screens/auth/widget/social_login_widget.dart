@@ -11,7 +11,7 @@ import 'package:sixam_mart/util/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:get/get.dart';
-import 'dart:io' show Platform;
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:google_sign_in/google_sign_in.dart';
 
 class SocialLoginWidget extends StatelessWidget {
@@ -29,12 +29,14 @@ class SocialLoginWidget extends StatelessWidget {
 
         Get.find<SplashController>().configModel.socialLogin[0].status ? InkWell(
           onTap: () async {
-debugPrint("tapped");
-            try{
-if(Platform.isAndroid||Platform.isIOS){
-  final GoogleSignInAccount usercredential = await GoogleSignIn().signIn();
-  final GoogleSignInAuthentication _auth = await usercredential.authentication;
 
+            try{
+if(!kIsWeb){
+  debugPrint("tapped");
+  final GoogleSignInAccount usercredential = await GoogleSignIn().signIn();
+  debugPrint("tapped3");
+  final GoogleSignInAuthentication _auth = await usercredential.authentication;
+  debugPrint("tapped2");
   final AuthCredential credential = GoogleAuthProvider.credential(
     accessToken: _auth.accessToken,
     idToken: _auth.idToken,
