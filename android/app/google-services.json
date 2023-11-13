@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:586680111067:android:b1e52e7d1b01fbf364e1fe",
         "android_client_info": {
-          "package_name": "com.ekiexpress"
+          "package_name": "com.ekiexpress.ekia"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "586680111067-hhcvrc9v54hjg3s9pf85qj9d9mfanit8.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.ekiexpress",
+            "package_name": "com.ekiexpress.ekia",
             "certificate_hash": "f5d47469680e09d66b4393ed25bc557d91b9fd14"
           }
         },
@@ -25,7 +25,7 @@
           "client_id": "586680111067-j4np3v91vefa7vpjtsh4lsjsglkm35kl.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.ekiexpress",
+            "package_name": "com.ekiexpress.ekia",
             "certificate_hash": "f57de79d494d5b57d1f49268a785a871a0a505df"
           }
         },

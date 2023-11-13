@@ -1,5 +1,6 @@
-import 'package:sixam_mart/util/dimensions.dart';
 import 'package:flutter/material.dart';
+
+import '../../util/dimensions.dart';
 
 class CustomLoader extends StatelessWidget {
   @override

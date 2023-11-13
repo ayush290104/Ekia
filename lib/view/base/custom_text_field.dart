@@ -1,7 +1,8 @@
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import '../../util/dimensions.dart';
+import '../../util/styles.dart';
 
 class CustomTextField extends StatefulWidget {
   final String hintText;

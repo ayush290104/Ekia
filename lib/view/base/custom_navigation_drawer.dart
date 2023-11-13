@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/controller/splash_controller.dart';
-import 'package:sixam_mart/helper/responsive_helper.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/view/base/custom_image.dart';
+
+import '../../controller/splash_controller.dart';
+import '../../helper/responsive_helper.dart';
+import '../../util/dimensions.dart';
+import 'custom_image.dart';
+
 
 class CustomNavigationDrawer extends StatefulWidget {
   final Color selectedColor;

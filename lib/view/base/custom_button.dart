@@ -1,6 +1,8 @@
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/styles.dart';
+
 import 'package:flutter/material.dart';
+
+import '../../util/dimensions.dart';
+import '../../util/styles.dart';
 
 class CustomButton extends StatelessWidget {
   final Function onPressed;

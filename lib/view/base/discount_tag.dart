@@ -1,9 +1,10 @@
-import 'package:sixam_mart/controller/splash_controller.dart';
-import 'package:sixam_mart/helper/responsive_helper.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../controller/splash_controller.dart';
+import '../../helper/responsive_helper.dart';
+import '../../util/dimensions.dart';
+import '../../util/styles.dart';
 
 class DiscountTag extends StatelessWidget {
   final double discount;

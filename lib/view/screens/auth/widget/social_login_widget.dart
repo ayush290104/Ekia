@@ -44,7 +44,7 @@ if(!kIsWeb){
   );
   await FirebaseAuth.instance.signInWithCredential(credential);
   if(usercredential != null) {
-    debugPrint("tapped ${_googleSignIn.currentUser.displayName}");
+    //debugPrint("tapped ${_googleSignIn.currentUser.displayName}");
     Get.find<AuthController>().loginWithSocialMedia(SocialLogInBody(
       email: usercredential.email, token: _auth.idToken, uniqueId: usercredential.id, medium: 'google',
     ));
@@ -91,15 +91,41 @@ else{
 
         Get.find<SplashController>().configModel.socialLogin[1].status ? InkWell(
           onTap: () async{
-            LoginResult _result = await FacebookAuth.instance.login();
-            if (_result.status == LoginStatus.success) {
-              Map _userData = await FacebookAuth.instance.getUserData();
-              if(_userData != null){
-                Get.find<AuthController>().loginWithSocialMedia(SocialLogInBody(
-                  email: _userData['email'], token: _result.accessToken.token, uniqueId: _result.accessToken.userId, medium: 'facebook',
-                ));
+            try{
+              if(!kIsWeb){
+                LoginResult _result = await FacebookAuth.instance.login();
+                if (_result.status == LoginStatus.success) {
+                  Map _userData = await FacebookAuth.instance.getUserData();
+                  if(_userData != null){
+                    Get.find<AuthController>().loginWithSocialMedia(SocialLogInBody(
+                      email: _userData['email'], token: _result.accessToken.token, uniqueId: _result.accessToken.userId, medium: 'facebook',
+                    ));
+                  }
+                }
               }
+                else{
+                  FacebookAuthProvider facebookauthprovider = FacebookAuthProvider();
+                  final UserCredential usercredential = await FirebaseAuth.instance.signInWithPopup(facebookauthprovider);
+                await  debugPrint("hello ${usercredential.user.email} ${FirebaseAuth.instance.currentUser.getIdToken()}");
+                  LoginResult _result = await FacebookAuth.instance.login();
+                  if (_result.status == LoginStatus.success) {
+                     Map _userData = await FacebookAuth.instance.getUserData();
+                    // if(_userData != null){
+                    //   Get.find<AuthController>().loginWithSocialMedia(SocialLogInBody(
+                    //     email: _userData['email'], token: _result.accessToken.token, uniqueId: _result.accessToken.userId, medium: 'facebook',
+                    //   ));
+                    // }
+                  }
+
+
+
+                }
+
+
             }
+        catch(error){
+              debugPrint("error is $error");
+        }
           },
           child: Container(
             height: 40, width: 40,
