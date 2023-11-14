@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:sixam_mart/data/model/response/module_model.dart';
 
 class ConfigModel {
@@ -194,6 +195,7 @@ class ConfigModel {
     refundActiveStatus = json['refund_active_status'];
     refEarningExchangeRate = json['ref_earning_exchange_rate'].toDouble();
     if (json['social_login'] != null) {
+      debugPrint("reessssppponseeeee"+json['social_login'].toString());
       socialLogin = <SocialLogin>[];
       json['social_login'].forEach((v) {
         socialLogin.add(new SocialLogin.fromJson(v));
@@ -282,6 +284,7 @@ class ConfigModel {
     data['ref_earning_exchange_rate'] = this.refEarningExchangeRate;
     data['refund_active_status'] = this.refundActiveStatus;
     if (this.socialLogin != null) {
+      debugPrint("reeessspooonnnsseeee"+this.socialLogin.toString());
       data['social_login'] = this.socialLogin.map((v) => v.toJson()).toList();
     }
     if (this.appleLogin != null) {

@@ -9,6 +9,42 @@
       "client_info": {
         "mobilesdk_app_id": "1:586680111067:android:b1e52e7d1b01fbf364e1fe",
         "android_client_info": {
+          "package_name": "com.ekiexpress"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "586680111067-0gd0dao7vtji2asliqsa1anno508umep.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzqqP2DD8NQnkhjkYV98VVwnE-5Nk1yes"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "586680111067-0gd0dao7vtji2asliqsa1anno508umep.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "586680111067-8cvr2n3putm33812lu5ifvin8j8473fn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.sixamtech.6amMart"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:586680111067:android:aa189f475044a7fa64e1fe",
+        "android_client_info": {
           "package_name": "com.ekiexpress.ekia"
         }
       },
@@ -19,14 +55,6 @@
           "android_info": {
             "package_name": "com.ekiexpress.ekia",
             "certificate_hash": "f5d47469680e09d66b4393ed25bc557d91b9fd14"
-          }
-        },
-        {
-          "client_id": "586680111067-j4np3v91vefa7vpjtsh4lsjsglkm35kl.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.ekiexpress.ekia",
-            "certificate_hash": "f57de79d494d5b57d1f49268a785a871a0a505df"
           }
         },
         {
